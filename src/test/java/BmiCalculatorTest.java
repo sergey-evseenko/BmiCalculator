@@ -31,4 +31,17 @@ public class BmiCalculatorTest {
         assertEquals(categoty, "Your category is Normal", "Категория неверная!!!");
         browser.quit();
     }
+
+    @Test
+    public void Overweight() {
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+        WebDriver browser = new ChromeDriver();
+        browser.get("https://healthunify.com/bmicalculator/");
+        browser.findElement(By.name("wg")).sendKeys("80");
+        browser.findElement(By.name("ht")).sendKeys("175");
+        browser.findElement(By.name("cc")).click();
+        String categoty = browser.findElement(By.name("desc")).getAttribute("value");
+        assertEquals(categoty, "Your category is Overweight", "Категория неверная!!!");
+        browser.quit();
+    }
 }
