@@ -46,7 +46,7 @@ public class BmiCalculatorTest {
     }
 
     @Test
-    public void Test4() {
+    public void Test5() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         WebDriver browser = new ChromeDriver();
         browser.get("https://healthunify.com/bmicalculator/");
